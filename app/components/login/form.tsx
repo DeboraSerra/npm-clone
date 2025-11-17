@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import "./form.scss";
+import { useRouter } from "next/navigation";
 
 const Form = ({
   setPasswordFocus,
@@ -8,6 +8,25 @@ const Form = ({
   setPasswordFocus: (val: boolean) => void;
 }) => {
   const [showPassword, setShowPassword] = useState(false);
+  const route = useRouter()
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    const data = new FormData(e.target as HTMLFormElement);
+    const username = data.get("username");
+    const password = data.get("password");
+    console.log("Username:", username);
+    console.log("Password:", password);
+    const response = await fetch('/api/login', {
+      method: 'POST',
+      body: data,
+    });
+    if (response.ok) {
+      // Redirect or show success message
+      route.push('/login/otp');
+    }
+  }
 
   return (
     <form id='login' method='POST' action='/login' className='w-full'>
@@ -93,8 +112,9 @@ const Form = ({
         <button
           type='submit'
           className='form__button text-sm'
-          style={{
-            padding: "8px 16px",
+          onClick={(e) => {
+            e.preventDefault()
+            route.push('/login/otp')
           }}
         >
           Sign In
