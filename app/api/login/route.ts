@@ -5,6 +5,8 @@ export const POST = async (request: Request) => {
   const username = formData.get("username");
   const password = formData.get("password");
 
+  console.log("Received login attempt:", { username, password });
+
   const usersFilePath = "data/users.json";
   const usersData = fs.readFileSync(usersFilePath, "utf-8");
   const users = JSON.parse(usersData);

@@ -89,5 +89,9 @@
     border: 1px solid rgba(22, 22, 22, 0.4);
     color: #000;
     padding: 8px 16px;
+
+    &:disabled {
+      opacity: 0.2;
+    }
   }
 }

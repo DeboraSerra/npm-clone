@@ -39,8 +39,8 @@ const Lock = () => {
           y2='42'
           gradientUnits='userSpaceOnUse'
         >
-          <stop offset='0.0204316' stop-color='#F7CD58'></stop>
-          <stop offset='0.982597' stop-color='#F5B63F'></stop>
+          <stop offset='0.0204316' stopColor='#F7CD58'></stop>
+          <stop offset='0.982597' stopColor='#F5B63F'></stop>
         </linearGradient>
         <linearGradient
           id='paint1_linear_449_428'
@@ -50,8 +50,8 @@ const Lock = () => {
           y2='39.5'
           gradientUnits='userSpaceOnUse'
         >
-          <stop stop-color='#65D2E5'></stop>
-          <stop offset='1' stop-color='#71D6D5'></stop>
+          <stop stopColor='#65D2E5'></stop>
+          <stop offset='1' stopColor='#71D6D5'></stop>
         </linearGradient>
         <linearGradient
           id='paint2_linear_449_428'
@@ -62,7 +62,7 @@ const Lock = () => {
           gradientUnits='userSpaceOnUse'
         >
           <stop stopColor='#2E6954'></stop>
-          <stop offset='1' stop-color='#429083'></stop>
+          <stop offset='1' stopColor='#429083'></stop>
         </linearGradient>
       </defs>
     </svg>

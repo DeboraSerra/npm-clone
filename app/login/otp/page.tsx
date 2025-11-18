@@ -13,11 +13,21 @@ const Otp = () => {
       </h1>
       <Form />
 
-      <div className='ba9b53df mt4'>
-        <p className='tc undefined'>Having problems?</p>
+      <div
+        className='flex items-center justify-center'
+        style={{ marginTop: "32px", flexDirection: "column" }}
+      >
+        <p
+          className='text-base'
+          style={{
+            margin: "16px auto",
+          }}
+        >
+          Having problems?
+        </p>
         <a
           href='/login/recovery-code?next=%2F'
-          className='_6126477b db center tc mt3 mb2 f5 fw6 hover-black-80undefined'
+          className='text-base underline'
         >
           Use a recovery code or request a reset
         </a>
