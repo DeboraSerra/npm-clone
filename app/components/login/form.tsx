@@ -19,7 +19,7 @@ const Form = ({
     e.preventDefault();
     // Handle form submission logic here
     const data = new FormData(e.target as HTMLFormElement);
-    console.log({data})
+    localStorage.setItem("username", form.username);
     const response = await fetch("/api/login", {
       method: "POST",
       body: data,

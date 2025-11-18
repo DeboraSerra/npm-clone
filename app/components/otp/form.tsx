@@ -1,13 +1,29 @@
+'use client';
+import { redirect } from "next/navigation";
 import Lock from "../images/lock";
 
 const Form = () => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const data = new FormData(e.target as HTMLFormElement);
+    const username = localStorage.getItem("username");
+    data.append("username", username || "");
+    const response = await fetch("/api/otp", {
+      method: "POST",
+      body: data,
+    });
+    console.log("OTP verification response:", response);
+    if (response.ok) {
+      redirect("/");
+    }
+  };
+
   return (
     <div className='login'>
       <form
         id='login'
-        method='POST'
-        action='/login/otp?next=%2F'
         className='w-full flex flex-col items-center'
+        onSubmit={handleSubmit}
       >
         <div className='tc'>
           <Lock />
