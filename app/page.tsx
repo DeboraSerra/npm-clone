@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { redirect, useSearchParams } from "next/navigation";
 import Bear from "./components/bear/bear";
+import { Suspense } from "react";
 
 function App() {
   const error = useSearchParams().get("error");
@@ -11,7 +12,7 @@ function App() {
   }
 
   return (
-    <div>
+    <Suspense fallback={<div>Loading...</div>}>
       <div className='login'>
         <Bear passwordFocus={false} />
         <h1
@@ -33,7 +34,7 @@ function App() {
           Go to home page
         </Link>
       </div>
-    </div>
+    </Suspense>
   );
 }
 
