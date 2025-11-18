@@ -5,8 +5,6 @@ export const POST = async (request: Request) => {
   const username = formData.get("username");
   const password = formData.get("password");
 
-  console.log("Received login attempt:", { username, password });
-
   const usersFilePath = "data/users.json";
   const usersData = fs.readFileSync(usersFilePath, "utf-8");
   const users = JSON.parse(usersData);
@@ -15,6 +13,7 @@ export const POST = async (request: Request) => {
     (u: { username: string; password: string }) =>
       u.username === username && u.password === password
   );
+  console.log({ user: { username, password } });
   if (user) {
     return new Response(JSON.stringify({ success: true }), {
       status: 200,

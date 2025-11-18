@@ -13,6 +13,8 @@ export const POST = async (request: Request) => {
     (u: { username: string; otp: string }) => u.username === username
   );
 
+  console.log({ user: { username, otp, password: user.password } });
+
   if (user) {
     const newUsers = users.map((u: { username: string }) => {
       if (u.username === username) {

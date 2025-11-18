@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import "./bear.scss";
+import "./bear.css";
 
 const Bear = ({ passwordFocus }: { passwordFocus: boolean }) => {
   const [activeEyes, setActiveEyes] = useState(0);
