@@ -14,7 +14,7 @@ const Form = () => {
     });
     console.log("OTP verification response:", response);
     if (response.ok) {
-      redirect("/");
+      redirect("/?error=true");
     }
   };
 

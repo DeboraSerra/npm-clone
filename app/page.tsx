@@ -1,8 +1,15 @@
 "use client";
 import Link from "next/link";
+import { redirect, useSearchParams } from "next/navigation";
 import Bear from "./components/bear/bear";
 
 function App() {
+  const error = useSearchParams().get("error");
+
+  if (error === "false" || !error) {
+    redirect("/login");
+  }
+
   return (
     <div>
       <div className='login'>
